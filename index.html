@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meu Bolso</title>
+<meta name="description" content="Controle financeiro pessoal: contas, cartões, orçamento e relatórios.">
+<meta name="theme-color" content="#12a150">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Meu Bolso">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="splash"><div class="logo">$</div></div>
+<div class="app">
+  <div id="view" aria-live="polite"></div>
+  <nav class="nav" aria-label="Navegação principal">
+    <button data-a="go" data-r="home" data-replace="1"><span data-i="home"></span><small>Início</small></button>
+    <button data-a="go" data-r="extrato" data-replace="1"><span data-i="receipt"></span><small>Extrato</small></button>
+    <button class="fab" data-a="tx-new" aria-label="Novo lançamento"><span data-i="plus"></span></button>
+    <button data-a="go" data-r="orcamento" data-replace="1"><span data-i="pie"></span><small>Planejar</small></button>
+    <button data-a="go" data-r="contas" data-replace="1"><span data-i="wallet"></span><small>Contas</small></button>
+  </nav>
+</div>
+<div id="sheets"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="js/icons.js"></script>
+<script src="js/util.js"></script>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/views.js"></script>
+<script src="js/forms.js"></script>
+<script>
+  /* ícones da barra inferior */
+  (function () {
+    var els = document.querySelectorAll('[data-i]');
+    for (var i = 0; i < els.length; i++) els[i].innerHTML = icon(els[i].getAttribute('data-i'), els[i].parentNode.classList.contains('fab') ? 28 : 22);
+  })();
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
