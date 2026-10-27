@@ -1,0 +1,10 @@
+# Gerador Mega-Sena
+
+PWA em HTML/CSS/JS puros (sem build). Abra `mega-sena/index.html` por um servidor estático.
+
+- Gera jogos de 6 a 15 dezenas, sempre distintos entre si e nunca iguais a um sorteio já ocorrido.
+- Pondera dezenas por frequência histórica, janela recente e atraso; filtra pelo perfil histórico (soma, pares/ímpares, baixas/altas, consecutivas).
+- Estatísticas, teste qui-quadrado de uniformidade, conferência de jogos salvos e importação de concursos novos.
+- Base: concursos 1 a 2365 (1996 a abr/2021). `tools/build-data.js` regenera `js/data.js` a partir de `tools/dadosmega.csv`.
+
+Aviso: a Mega-Sena é aleatória. Nenhum método aumenta a chance de acerto (1 em 50.063.860 na sena).
